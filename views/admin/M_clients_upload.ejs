@@ -1,0 +1,52 @@
+<%- include ('common/M_layout_top.ejs') %>
+<!-- Page header -->
+<div class="page-header mb-3">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline border-bottom">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>고객 관리</a>
+                <span class="breadcrumb-item active">고객사 등록</span>
+            </div>
+
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+
+</div>
+<!-- /page header -->
+<!-- Page content -->
+<div class="page-content pt-0">
+    <%- include ('common/M_side_nav.ejs') %>
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="panel-title font-weight-bold">고객사 등록</h5>
+                </div>
+                <div class="card-body">
+                    <form action="">
+                        <p class="badge">* 고객사에서 전달받은 엑셀을 업로드 해주세요.</p>
+
+                        <div class="form-group row">
+                            <div class="col-lg-10">
+                                <input type="file" class="file-input" data-fouc>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <!-- Content area -->
+
+    </div>
+    <!-- Main content -->
+
+</div>
+<!-- Page content -->
+
+
+<%- include ('common/M_layout_bottom.ejs') %>

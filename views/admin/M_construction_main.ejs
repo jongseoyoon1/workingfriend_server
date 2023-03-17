@@ -1,0 +1,166 @@
+<%- include ('common/M_layout_top.ejs') %>
+
+
+<!-- Page header -->
+<div class="page-header">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline border-bottom">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>홈</a>
+                <span class="breadcrumb-item active">공사 관리</span>
+            </div>
+
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+
+    <div class="page-header-content header-elements-lg-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">공사</span> - 진행중</h4>
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+</div>
+<!-- /page header -->
+
+
+<!-- Page content -->
+<div class="page-content pt-0">
+    <%- include ('common/M_side_nav.ejs') %>
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content">
+
+            <!-- Dashboard content -->
+            <div class="row">
+                <div class="col-xl-12">
+
+                    <!-- 보수리스트 -->
+                    <div class="card">
+                        <div class="card-header header-elements-sm-inline">
+                            <h6 class="card-title font-weight-bold">공사 리스트 - 진행중</h6>
+                            <div class="header-elements">
+                                <span class="badge badge-success badge-pill">5 건 진행중</span>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table text-nowrap">
+                                <thead>
+                                <tr class="table-active">
+                                    <th>번호</th>
+                                    <th>제목</th>
+                                    <th>등록일</th>
+                                    <th>마감일</th>
+                                    <th>담당자</th>
+                                    <th>공사 기간</th>
+                                    <th>공사 예산</th>
+                                    <th>공사 현장 주소</th>
+                                    <th>결재 상태</th>
+                                    <th>결재자</th>
+                                    <th>진행 상태</th>
+                                    <th class="text-center" style="width: 20px;"><i class="icon-arrow-down12"></i></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center"><span>1</span></td>
+                                    <td><span class="text-muted"><a href="#">강남점 신규 오픈 공사</a></span></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="font-weight-semibold mb-0">김철수</span></td>
+                                    <td><span class="text-muted">2022-08-01 ~ 2022-09-01</span></td>
+                                    <td><span>5,000,000 원</span></td>
+                                    <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                                    <td><span class="text-success">승인완료</span></td>
+                                    <td><span class="text-muted">김철수 대리,홍길동 과장,박철수 차장</span></td>
+                                    <td><span class="badge badge-pill badge-primary">공사 진행중</span></td>
+                                    <td class="text-center">
+                                        <div class="list-icons">
+                                            <div class="dropdown">
+                                                <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-text2"></i> 입찰 요청서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 입찰 제안서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업계획서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업완료보고서 보기</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><span>2</span></td>
+                                    <td><span class="text-muted"><a href="#">강남점 신규 오픈 공사</a></span></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="font-weight-semibold mb-0">김철수</span></td>
+                                    <td><span class="text-muted">2022-08-01 ~ 2022-09-01</span></td>
+                                    <td><span>5,000,000 원</span></td>
+                                    <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                                    <td><span class="text-danger">승인 진행중</span></td>
+                                    <td><span class="text-muted">김철수 대리,홍길동 과장,박철수 차장</span></td>
+                                    <td><span class="badge badge-pill badge-success">공사 예정</span></td>
+                                    <td class="text-center">
+                                        <div class="list-icons">
+                                            <div class="dropdown">
+                                                <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-text2"></i> 입찰 요청서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 입찰 제안서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업계획서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업완료보고서 보기</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><span>3</span></td>
+                                    <td><span class="text-muted"><a href="#">강남점 신규 오픈 공사</a></span></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="font-weight-semibold mb-0">김철수</span></td>
+                                    <td><span class="text-muted">2022-08-01 ~ 2022-09-01</span></td>
+                                    <td><span>5,000,000 원</span></td>
+                                    <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                                    <td><span class="text-success">승인완료</span></td>
+                                    <td><span class="text-muted">김철수 대리,홍길동 과장,박철수 차장</span></td>
+                                    <td><span class="badge badge-pill badge-primary">공사 진행중</span></td>
+                                    <td class="text-center">
+                                        <div class="list-icons">
+                                            <div class="dropdown">
+                                                <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-text2"></i> 입찰 요청서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 입찰 제안서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업계획서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업완료보고서 보기</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <!-- /보수 리스트 -->
+                </div>
+                <!-- /dashboard content -->
+
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+
+
+    <!-- /notifications -->
+<%- include ('common/M_layout_bottom.ejs') %>

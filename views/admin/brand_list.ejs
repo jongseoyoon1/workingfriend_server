@@ -1,0 +1,142 @@
+<%- include ('common/layout_top.ejs') %>
+
+
+<!-- Page header -->
+<div class="page-header">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline border-bottom">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>홈</a>
+                <span class="breadcrumb-item active">브랜드 및 매장관리</span>
+            </div>
+
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+
+    <div class="page-header-content header-elements-lg-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">브랜드 및 매장관리</span> - 목록</h4>
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+</div>
+<!-- /page header -->
+
+
+<!-- Page content -->
+<div class="page-content pt-0">
+    <%- include ('common/side_nav.ejs') %>
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content">
+
+            <!-- Dashboard content -->
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="card-title">브랜드 및 매장 목록</h6>
+                        </div>
+
+                        <div class="card-body">
+                            <ul class="nav nav-tabs nav-tabs-top">
+                                <!--<li class="nav-item"><a href="#top-tab1" class="nav-link active" data-toggle="tab">전체</a></li>-->
+                                <% for(var i = 0; i < brand.length; i++){ %> 
+                                    <li class="nav-item"><a href="#top-tab<%= brand[i].id %>" class="nav-link" data-toggle="tab"><%= brand[i].name %></a></li>
+                                <% } %>
+                                
+                            </ul>
+
+                            <div class="tab-content">
+                                <% for(var i = 0; i < brand.length; i++){ %> 
+                                    <div class="tab-pane fade show active" id="top-tab<%= brand[i].id %>">
+                                        <div class="table-responsive">
+                                            <table class="table text-nowrap">
+                                                <colgroup>
+                                                    <col style="width:5%">
+                                                    <col>
+                                                    <col style="width:5%;">
+                                                    <col>
+                                                    <col>
+                                                    <col>
+                                                    <col>
+                                                    <col style="width:5%">
+                                                </colgroup>
+                                                <thead>
+                                                <tr class="table-active">
+                                                    <th>번호</th>
+                                                    <th>지점명</th>
+                                                    <th>매장번호</th>
+                                                    <th>주소</th>
+                                                    <th>연락처</th>
+                                                    <th>보수 승인자</th>
+                                                    <th>입찰 담당자</th>
+                                                    <th class="text-center" style="width: 20px;"><i class="icon-arrow-down12"></i></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <% for(var j = 0; j < brand[i].stores.length; j++){ %>
+                                                    <tr>
+                                                        <td class="text-center"><%= j + 1 %></td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center justify-content-left">
+                                                                <div class="mr-3">
+                                                                    <a href="#">
+                                                                        <img src="/admin/global_assets/images/brands/mercedes-benz.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="text-left">
+                                                                    <a href="#" class="text-body"><%= brand[i].stores[j].name %></a>
+                                                                    <div class="text-muted font-size-sm">
+                                                                        <span class="badge badge-mark border-primary mr-1"></span>
+                                                                        <%= brand[i].name %>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center"><%= brand[i].stores[j].id %></td>
+                                                        <td><span><%= brand[i].stores[j].address %></span></td>
+                                                        <td><span><%= brand[i].stores[j].manager_tel %></span></td>
+                                                        <td><span class="text-success"><%= brand[i].stores[j].manager_name %></span></td>
+                                                        <td><span class="text-primary"><%= brand[i].stores[j].manager_name %></span></td>
+                                                        <td class="text-center">
+                                                            <div class="list-icons">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                        <a href="#" class="dropdown-item"><i class="icon-file-stats"></i> 지점 정보 변경</a>
+                                                                        <a href="#" class="dropdown-item"><i class="icon-file-text2"></i> 보수 승인자 변경</a>
+                                                                        <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 입찰 담당자 변경</a>
+                                                                        <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 지점 삭제</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                <% } %>
+                                                
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                <% } %>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+
+
+    <!-- /notifications -->
+<%- include ('common/layout_bottom.ejs') %>

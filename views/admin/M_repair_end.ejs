@@ -1,0 +1,215 @@
+<%- include ('common/M_layout_top.ejs') %>
+
+
+<!-- Page header -->
+<div class="page-header">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline border-bottom">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>홈</a>
+                <span class="breadcrumb-item active">대시보드</span>
+            </div>
+
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+
+    <div class="page-header-content header-elements-lg-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">홈</span> - 대시보드</h4>
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+</div>
+<!-- /page header -->
+
+
+<!-- Page content -->
+<div class="page-content pt-0">
+    <%- include ('common/M_side_nav.ejs') %>
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content">
+
+            <!-- Dashboard content -->
+            <div class="row">
+                <div class="col-xl-12">
+
+                    <!-- 보수리스트 -->
+                    <div class="card">
+                        <div class="card-header header-elements-sm-inline">
+                            <h6 class="card-title font-weight-bold">보수 리스트 - 종료</h6>
+                            <div class="header-elements">
+                                <span class="badge badge-danger badge-pill">보수 종료 3 건</span>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table text-nowrap">
+                                <thead>
+                                <tr class="table-active">
+                                    <th>브랜드 및 지점</th>
+                                    <th>요청일</th>
+                                    <th>요청 제목</th>
+                                    <th>승인 상태</th>
+                                    <th>승인자</th>
+                                    <th>승인일</th>
+                                    <th>입찰 상태</th>
+                                    <th>입찰 마감일</th>
+                                    <th>입찰 담당자</th>
+                                    <th>보수 진행일</th>
+                                    <th>진행 상태</th>
+                                    <th class="text-center" style="width: 20px;"><i class="icon-arrow-down12"></i></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="mr-3">
+                                                <a href="#">
+                                                    <img src="/admin/global_assets/images/brands/mercedes-benz.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="#" class="text-body font-weight-semibold">강남점</a>
+                                                <div class="text-muted font-size-sm">
+                                                    <span class="badge badge-mark border-primary mr-1"></span>
+                                                    메르세데스 벤츠
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="text-muted"><a href="#">강남점 매장 출입구 보수 요청</a></span></td>
+                                    <td><span class="text-success">승인완료</span></td>
+                                    <td><h6 class="font-weight-semibold mb-0">김철수</h6></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="badge badge-pill badge-danger">입찰 마감</span></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><h6 class="font-weight-semibold mb-0">김철수</h6></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="badge badge-danger">보수 종료</span></td>
+                                    <td class="text-center">
+                                        <div class="list-icons">
+                                            <div class="dropdown">
+                                                <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-stats"></i> 보수 요청서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-text2"></i> 입찰 요청서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 입찰 제안서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업계획서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업완료보고서 보기</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="mr-3">
+                                                <a href="#">
+                                                    <img src="/admin/global_assets/images/brands/mercedes-benz.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="#" class="text-body font-weight-semibold">강남점</a>
+                                                <div class="text-muted font-size-sm">
+                                                    <span class="badge badge-mark border-primary mr-1"></span>
+                                                    메르세데스 벤츠
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="text-muted"><a href="#">강남점 매장 출입구 보수 요청</a></span></td>
+                                    <td><span class="text-success">승인완료</span></td>
+                                    <td><h6 class="font-weight-semibold mb-0">김철수</h6></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="badge badge-pill badge-danger">입찰 마감</span></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><h6 class="font-weight-semibold mb-0">김철수</h6></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="badge badge-danger">보수 종료</span></td>
+                                    <td class="text-center">
+                                        <div class="list-icons">
+                                            <div class="dropdown">
+                                                <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-stats"></i> 보수 요청서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-text2"></i> 입찰 요청서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 입찰 제안서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업계획서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업완료보고서 보기</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="mr-3">
+                                                <a href="#">
+                                                    <img src="/admin/global_assets/images/brands/mercedes-benz.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="#" class="text-body font-weight-semibold">강남점</a>
+                                                <div class="text-muted font-size-sm">
+                                                    <span class="badge badge-mark border-primary mr-1"></span>
+                                                    메르세데스 벤츠
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="text-muted"><a href="#">강남점 매장 출입구 보수 요청</a></span></td>
+                                    <td><span class="text-success">승인완료</span></td>
+                                    <td><h6 class="font-weight-semibold mb-0">김철수</h6></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="badge badge-pill badge-danger">입찰 마감</span></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><h6 class="font-weight-semibold mb-0">김철수</h6></td>
+                                    <td><span class="text-muted">2022-08-01</span></td>
+                                    <td><span class="badge badge-danger">보수 종료</span></td>
+                                    <td class="text-center">
+                                        <div class="list-icons">
+                                            <div class="dropdown">
+                                                <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-stats"></i> 보수 요청서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-text2"></i> 입찰 요청서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 입찰 제안서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업계획서 보기</a>
+                                                    <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업완료보고서 보기</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <!-- /보수 리스트 -->
+                </div>
+                <!-- /dashboard content -->
+
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+
+
+    <!-- /notifications -->
+<%- include ('common/M_layout_bottom.ejs') %>

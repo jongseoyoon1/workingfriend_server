@@ -1,0 +1,79 @@
+<%- include ('common/layout_top.ejs') %>
+
+
+<!-- Page header -->
+<div class="page-header">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline border-bottom">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>홈</a>
+                <span class="breadcrumb-item active">브랜드</span>
+            </div>
+
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+
+    <div class="page-header-content header-elements-lg-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">브랜드 관리</span> - 등록</h4>
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+</div>
+<!-- /page header -->
+
+
+<!-- Page content -->
+<div class="page-content pt-0">
+    <%- include ('common/side_nav.ejs') %>
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content">
+
+            <!-- Dashboard content -->
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title font-weight-bold">브랜드 등록</h5>
+                        </div>
+
+                        <div class="card-body">
+                            <form action="#">
+                                <div class="form-group">
+                                    <label>브랜드명:</label>
+                                    <input type="text" class="form-control" placeholder="브랜드명을 입력해주세요.">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>브랜드 로고:</label>
+                                    <label class="custom-file">
+                                        <input type="file" class="custom-file-input">
+                                        <span class="custom-file-label">로고 이미지 선택</span>
+                                    </label>
+                                    <span class="form-text text-muted">파일 형식: gif, png, jpg. 최대 용량 2Mb</span>
+                                </div>
+
+                                <div class="text-right">
+                                    <button type="submit" class="btn btn-primary">브랜드 등록 <i class="icon-paperplane ml-2"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+
+
+    <!-- /notifications -->
+<%- include ('common/layout_bottom.ejs') %>

@@ -1,0 +1,153 @@
+<!-- Main sidebar -->
+<div class="sidebar sidebar-light sidebar-main sidebar-expand-lg align-self-start">
+
+    <!-- Sidebar content -->
+    <div class="sidebar-content">
+
+        <!-- Header -->
+        <div class="sidebar-section sidebar-header">
+            <div class="sidebar-section-body d-flex align-items-center justify-content-center pb-0">
+                <h5 class="sidebar-resize-hide flex-1 mb-0">관리자 메뉴</h5>
+                <div>
+                    <button type="button" class="btn btn-outline-light text-body border-transparent btn-icon rounded-pill btn-sm sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
+                        <i class="icon-transmission"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-outline-light text-body border-transparent btn-icon rounded-pill btn-sm sidebar-mobile-main-toggle d-lg-none">
+                        <i class="icon-cross2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
+
+
+        <!-- User menu -->
+        <div class="sidebar-section sidebar-user">
+            <div class="sidebar-section-body d-flex justify-content-center">
+                <a href="#">
+                    <img src="global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" alt="">
+                </a>
+
+                <div class="sidebar-resize-hide flex-1 ml-3">
+                    <div class="font-weight-semibold">Admin</div>
+                    <div class="font-size-sm line-height-sm text-muted">
+                        일하는친구들 관리자
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /user menu -->
+
+
+        <!-- Main navigation -->
+        <div class="sidebar-section">
+            <ul class="nav nav-sidebar" data-nav-type="accordion">
+
+                <!-- 대시보드 -->
+                <li class="nav-item-header pt-0"><div class="text-uppercase font-size-xs line-height-xs">HOME</div> <i class="icon-menu" title="Main"></i></li>
+                <li class="nav-item">
+                    <a href="/" class="nav-link active">
+                        <i class="icon-home4"></i>
+                        <span>대시보드</span>
+                    </a>
+                </li>
+                <!-- /대시보드 -->
+
+                <!-- 보수관리 메뉴 -->
+                <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">보수</div> <i class="icon-menu" title="Layout options"></i></li>
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-folder-plus"></i> <span>보수 리스트</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Page layouts">
+                        <li class="nav-item"><a href="repair_main" class="nav-link">진행중</a></li>
+                        <li class="nav-item"><a href="repair_end" class="nav-link">종료</a></li>
+                        <li class="nav-item"><a href="repair_reject" class="nav-link">반려</a></li>
+                        <li class="nav-item"><a href="repair_drop" class="nav-link">유찰</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-folder-plus"></i> <span>보수 입찰관리</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Page layouts">
+                        <li class="nav-item"><a href="repair_form" class="nav-link">보수 요청서 등록</a></li>
+                        <li class="nav-item"><a href="repair_request" class="nav-link">입찰 요청서 등록</a></li>
+                        <li class="nav-item"><a href="repair_request_live" class="nav-link">입찰 진행중 리스트</a></li>
+                        <li class="nav-item"><a href="repair_request_end" class="nav-link">입찰 마감 리스트</a></li>
+                    </ul>
+                </li>
+                <!-- //보수관리 메뉴 -->
+                <!-- 공사관리 메뉴 -->
+                <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">공사</div> <i class="icon-menu" title="Layout options"></i></li>
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-folder-plus"></i> <span>공사 리스트</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Page layouts">
+                        <li class="nav-item"><a href="construction_main" class="nav-link">진행중</a></li>
+                        <li class="nav-item"><a href="construction_end" class="nav-link">종료</a></li>
+                        <li class="nav-item"><a href="construction_reject" class="nav-link">반려</a></li>
+                        <li class="nav-item"><a href="construction_drop" class="nav-link">유찰</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-folder-plus"></i> <span>공사 입찰관리</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Page layouts">
+                        <li class="nav-item"><a href="construction_request" class="nav-link">입찰 요청서 등록</a></li>
+                        <li class="nav-item"><a href="construction_request_live" class="nav-link">입찰 진행중 리스트</a></li>
+                        <li class="nav-item"><a href="construction_request_end" class="nav-link">입찰 마감 리스트</a></li>
+                    </ul>
+                </li>
+                <!-- //공사관리 메뉴 -->
+                <!-- 브랜드 관리 메뉴 -->
+                <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">브랜드 및 매장</div> <i class="icon-menu" title="Layout options"></i></li>
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-folder-plus"></i> <span>브랜드 및 매장관리</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Page layouts">
+                        <li class="nav-item"><a href="brand_list" class="nav-link">매장 목록 조회</a></li>
+                        <li class="nav-item"><a href="brand_registration" class="nav-link">브랜드 등록</a></li>
+                        <li class="nav-item"><a href="store_registration" class="nav-link">매장 등록</a></li>
+                    </ul>
+                </li>
+                <!-- //브랜드 관리 메뉴 -->
+                <!-- 매장 관리 메뉴 -->
+                <!--                <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">매장</div> <i class="icon-menu" title="Layout options"></i></li>-->
+                <!--                <li class="nav-item nav-item-submenu">-->
+                <!--                    <a href="#" class="nav-link"><i class="icon-folder-plus"></i> <span>매장 리스트</span></a>-->
+                <!--                    <ul class="nav nav-group-sub" data-submenu-title="Page layouts">-->
+                <!--                        <li class="nav-item"><a href="#" class="nav-link">단일 매장 조회</a></li>-->
+                <!--                        <li class="nav-item"><a href="#" class="nav-link">단일 매장 등록</a></li>-->
+                <!--                        <li class="nav-item"><a href="#" class="nav-link">매장 그룹 조회</a></li>-->
+                <!--                        <li class="nav-item"><a href="#" class="nav-link">매장 그룹 등록</a></li>-->
+                <!--                    </ul>-->
+                <!--                </li>-->
+                <!-- //매장 관리 메뉴 -->
+                <!-- 사원 관리 메뉴 -->
+                <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">직원</div> <i class="icon-menu" title="Layout options"></i></li>
+                <li class="nav-item">
+                    <a href="user_list" class="nav-link">
+                        <i class="icon-users4"></i>
+                        <span>직원 조회</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="user_registration" class="nav-link">
+                        <i class="icon-user-plus"></i>
+                        <span>직원 등록</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="user_move" class="nav-link">
+                        <i class="icon-user-plus"></i>
+                        <span>직원 관리매장 위임</span>
+                    </a>
+                </li>
+                <!-- //사원 관리 메뉴 -->
+
+                <!-- /layout -->
+
+            </ul>
+        </div>
+        <!-- /main navigation -->
+
+    </div>
+    <!-- /sidebar content -->
+
+</div>
+<!-- /main sidebar -->

@@ -1,0 +1,487 @@
+<%- include ('common/layout_top.ejs') %>
+
+
+<!-- Page header -->
+<div class="page-header">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline border-bottom">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>홈</a>
+                <span class="breadcrumb-item active">보수 입찰관리</span>
+            </div>
+
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+
+    <div class="page-header-content header-elements-lg-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">보수 입찰관리</span> - 입찰 요청서 등록</h4>
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+</div>
+<!-- /page header -->
+
+
+<!-- Page content -->
+<div class="page-content pt-0">
+    <%- include ('common/side_nav.ejs') %>
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content">
+            <form action="#">
+
+            <!-- Dashboard content -->
+            <div class="row">
+                <div class="col-xl-12">
+
+                    <!-- 보수 요청서 -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title font-weight-bold">보수 입찰 공고 등록</h5>
+                            </div>
+
+                            <div class="card-body">
+
+                                    <fieldset>
+                                        <div class="form-group row">
+                                            <label class="col-form-label col-lg-2">보수 요청서 선택</label>
+                                            <div class="col-lg-10">
+                                                <select class="form-control select" data-fouc>
+                                                    <optgroup label="메르세데스 벤츠">
+                                                        <option value="AZ">벤츠 강남점 - 요청서 제목이 들어갑니다.</option>
+                                                        <option value="CO">벤츠 서초점 - 요청서 제목이 들어갑니다.</option>
+                                                        <option value="ID">벤츠 판교점 - 요청서 제목이 들어갑니다.</option>
+                                                        <option value="WY">벤츠 양재점 - 요청서 제목이 들어갑니다.</option>
+                                                    </optgroup>
+                                                    <optgroup label="BMW">
+                                                        <option value="AZ">BMW 강남점 - 요청서 제목이 들어갑니다.</option>
+                                                        <option value="CO">BMW 서초점 - 요청서 제목이 들어갑니다.</option>
+                                                        <option value="ID">BMW 판교점 - 요청서 제목이 들어갑니다.</option>
+                                                        <option value="WY">BMW 양재점 - 요청서 제목이 들어갑니다.</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-form-label col-lg-2">입찰 공고 제목</label>
+                                            <div class="col-lg-10">
+                                                <input type="text" class="form-control form-control-filled font-weight-bold" placeholder="요청서 제목을 입력해주세요.">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-form-label col-lg-2">입찰 공고 내용</label>
+                                            <div class="col-lg-10">
+                                                <textarea rows="3" cols="3" class="form-control form-control-filled" placeholder="요청서 내용을 입력해주세요."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-2 col-form-label font-weight-semibold">사진 및 영상</label>
+                                            <div class="col-lg-10">
+                                                <input type="file" class="file-input" data-browse-on-zone-click="true" multiple="multiple" data-fouc>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-form-label col-lg-2">현장 주소</label>
+                                            <div class="col-lg-10">
+                                                <input type="text" class="form-control form-control-filled" placeholder="요청서 제목을 입력해주세요.">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-form-label col-lg-2">입찰 공고 마감일</label>
+                                            <div class="col-lg-10">
+                                                <input type="date" class="form-control form-control-filled">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-form-label col-lg-2">보수 완료일</label>
+                                            <div class="col-lg-10">
+                                                <input type="date" class="form-control form-control-filled">
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+
+
+
+                            </div>
+                            <!-- /보수 요청서 -->
+                        </div>
+
+
+                    <!-- /dashboard content -->
+
+                </div>
+
+                <!-- /content area -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12 pt-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title font-weight-bold">1군 입찰 업체 선택</h5>
+                        </div>
+                        <div class="card-body">
+                            <select multiple="multiple" class="form-control listbox" data-fouc>
+                                <option value="option1">인테리어 시공업체 - 1</option>
+                                <option value="option2">인테리어 시공업체 - 2</option>
+                                <option value="option4">인테리어 시공업체 - 3</option>
+                                <option value="option5">인테리어 시공업체 - 4</option>
+                                <option value="option7">인테리어 시공업체 - 5</option>
+                                <option value="option8">인테리어 시공업체 - 6</option>
+                                <option value="option9">인테리어 시공업체 - 7</option>
+                                <option value="option10">인테리어 시공업체 - 8</option>
+                                <option value="option11">인테리어 시공업체 - 9</option>
+                                <option value="option12">인테리어 시공업체 - 10 </option>
+                                <option value="option13">인테리어 시공업체 - 11</option>
+                                <option value="option14">인테리어 시공업체 - 12</option>
+                                <option value="option15">인테리어 시공업체 - 13</option>
+                                <option value="option16">인테리어 시공업체 - 14</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title font-weight-bold">2군 입찰 업체 선택</h5>
+                        </div>
+                        <div class="card-body">
+                            <select multiple="multiple" class="form-control listbox" data-fouc>
+                                <option value="option1">인테리어 시공업체 - 1</option>
+                                <option value="option2">인테리어 시공업체 - 2</option>
+                                <option value="option4">인테리어 시공업체 - 3</option>
+                                <option value="option5">인테리어 시공업체 - 4</option>
+                                <option value="option7">인테리어 시공업체 - 5</option>
+                                <option value="option8">인테리어 시공업체 - 6</option>
+                                <option value="option9">인테리어 시공업체 - 7</option>
+                                <option value="option10">인테리어 시공업체 - 8</option>
+                                <option value="option11">인테리어 시공업체 - 9</option>
+                                <option value="option12">인테리어 시공업체 - 10 </option>
+                                <option value="option13">인테리어 시공업체 - 11</option>
+                                <option value="option14">인테리어 시공업체 - 12</option>
+                                <option value="option15">인테리어 시공업체 - 13</option>
+                                <option value="option16">인테리어 시공업체 - 14</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="col-lg-12">
+                    <div class="card-header">
+                        <h5 class="card-title font-weight-bold">필수자재 등록 (선택)</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <fieldset>
+                                    <legend class="font-weight-semibold"><i class="icon-reading mr-2"></i> 자재 업체 정보</legend>
+
+                                    <div class="form-group">
+                                        <label>업체명</label>
+                                        <input type="text" class="form-control" placeholder="업체명을 입력해주세요.">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>업체 주소</label>
+                                        <input type="text" class="form-control" placeholder="업체 주소를 입력해주세요.">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>연락처</label>
+                                        <input type="text" class="form-control" placeholder="01012345678">
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <fieldset>
+                                    <legend class="font-weight-semibold"><i class="icon-truck mr-2"></i> 자재정보</legend>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>자재명</label>
+                                                <input type="text" placeholder="자재명을 입력해주세요." class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>수량</label>
+                                                <input type="text" placeholder="수량을 입력해주세요." class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>단위</label>
+                                                <input type="text" placeholder="단위를 입력해주세요." class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>단가</label>
+                                                <input type="text" placeholder="1개 단가를 입력해주세요." class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                                <fieldset>
+                                    <legend class="font-weight-semibold"><i class="icon-truck mr-2"></i> 자재정보</legend>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>자재명</label>
+                                                <input type="text" placeholder="자재명을 입력해주세요." class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>수량</label>
+                                                <input type="text" placeholder="수량을 입력해주세요." class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>단위</label>
+                                                <input type="text" placeholder="단위를 입력해주세요." class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>단가</label>
+                                                <input type="text" placeholder="1개 단가를 입력해주세요." class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="text-right">
+                <button type="button" class="btn btn-primary">자재 추가 <i class="icon-plus3 ml-2"></i></button>
+            </div>
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h5 class="card-title font-weight-bold">필수자재 등록 (선택)</h5>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <fieldset>
+                                <legend class="font-weight-semibold"><i class="icon-reading mr-2"></i> 자재 업체 정보</legend>
+
+                                <div class="form-group">
+                                    <label>업체명</label>
+                                    <input type="text" class="form-control" placeholder="업체명을 입력해주세요.">
+                                </div>
+                                <div class="form-group">
+                                    <label>업체 주소</label>
+                                    <input type="text" class="form-control" placeholder="업체 주소를 입력해주세요.">
+                                </div>
+                                <div class="form-group">
+                                    <label>연락처</label>
+                                    <input type="text" class="form-control" placeholder="01012345678">
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <fieldset>
+                                <legend class="font-weight-semibold"><i class="icon-truck mr-2"></i>자재정보</legend>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>자재명</label>
+                                            <input type="text" placeholder="자재명을 입력해주세요." class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>수량</label>
+                                            <input type="text" placeholder="수량을 입력해주세요." class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>단위</label>
+                                            <input type="text" placeholder="단위를 입력해주세요." class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>단가</label>
+                                            <input type="text" placeholder="1개 단가를 입력해주세요." class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                            <fieldset>
+                                <legend class="font-weight-semibold"><i class="icon-truck mr-2"></i> 자재정보</legend>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>자재명</label>
+                                            <input type="text" placeholder="자재명을 입력해주세요." class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>수량</label>
+                                            <input type="text" placeholder="수량을 입력해주세요." class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>단위</label>
+                                            <input type="text" placeholder="단위를 입력해주세요." class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>단가</label>
+                                            <input type="text" placeholder="1개 단가를 입력해주세요." class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="text-right">
+                <button type="button" class="btn btn-primary">자재 추가 <i class="icon-plus3 ml-2"></i></button>
+                <button type="button" class="btn btn-primary">업체 추가 <i class="icon-plus3 ml-2"></i></button>
+            </div>
+            <div class="row pt-3">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title font-weight-bold">첨부자료 (선택)</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label class="col-lg-2 col-form-label font-weight-semibold">첨부 파일</label>
+                                <div class="col-ldg-10">
+                                    <input type="file" class="file-input" data-browse-on-zone-click="true" multiple="multiple" data-show-preview="false" data-fouc>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title font-weight-bold">공고 키워드 등록 (선택)</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>키워드 입력</label>
+                                <input type="text" class="form-control tokenfield" value="키워드1(예시),키워드2(예시)" data-fouc>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /main content -->
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-block btn-warning btn-lg py-3 font-weight-bold">요청서 등록 <i class="icon-paperplane ml-2"></i></button>
+                    </div>
+                </div>
+
+            </div>
+            </form>
+
+        </div>
+        <!-- /page content -->
+
+        <script>
+            var app = new Vue({
+              el: '#vue_app',
+              data: {
+                curExamMenu: "전체",
+                selectedPlan:{},
+                repairs:[],
+                constructions:[],
+                
+              },
+              created() {
+                window.Vue = this
+                this.getPlans();
+               
+              },
+              mounted() {
+                
+              },
+              methods: {
+                getPlans : function() {
+                    $.ajax({
+                    url:"http://49.50.160.206:14000/api/v1/plan/client_plans",
+                    type:"POST",
+                    body: {
+                        client_id:'1'
+                    },
+                    json:true,
+                    success: function(result) {
+                        if (result) {
+                            window.Vue.repairs = result.filter(plan => plan.plan_type == 0)
+                            window.Vue.constructions = result.filter(plan => plan.plan_type == 1)
+                            console.log("##### repair 3",window.Vue.repairs.length);
+                            console.log("##### constu 4",window.Vue.constructions.length);
+                            window.Vue.selectedPlan = window.Vue.repairs[0];
+                        }
+                    }
+                  });
+                },
+    
+                selectMore : function(planModel){
+                    console.log("====== plan datas :",planModel)
+                    this.selectedPlan = planModel/*JSON.parse(planModel);*/
+                    console.log("====== plan id:",this.selectedPlan.id);
+                },
+
+              }
+          })
+    
+        </script>
+
+        <!-- /notifications -->
+<%- include ('common/layout_bottom.ejs') %>

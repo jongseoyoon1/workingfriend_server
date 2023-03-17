@@ -1,0 +1,231 @@
+<%- include ('common/M_layout_top.ejs') %>
+<!-- Page header -->
+<div class="page-header mb-3">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline border-bottom">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="/" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>홈</a>
+                <span class="breadcrumb-item active">시공업체 조회</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page header -->
+<!-- Page content -->
+<div class="page-content pt-0">
+    <%- include ('common/M_side_nav.ejs') %>
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title font-weight-bold">시공업체 목록</h5>
+                        </div>
+
+                        <div class="card-body">
+                            <ul class="nav nav-tabs nav-tabs-top">
+                                <li class="nav-item"><a href="#top-tab1" class="nav-link active" data-toggle="tab">전체</a></li>
+                                <li class="nav-item"><a href="#top-tab2" class="nav-link" data-toggle="tab">1군 업체</a></li>
+                                <li class="nav-item"><a href="#top-tab3" class="nav-link" data-toggle="tab">2군 업체</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="top-tab1">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead>
+                                            <tr class="table-active font-weight-bold">
+                                                <th>번호</th>
+                                                <th>등급</th>
+                                                <th>시공업체명</th>
+                                                <th>주소</th>
+                                                <th>담당자명</th>
+                                                <th>연락처</th>
+                                                <th>아이디</th>
+                                                <th>비밀번호</th>
+                                                <th>보수 횟수</th>
+                                                <th>공사 횟수</th>
+                                                <th>변경</th>
+                                                <th>삭제</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center"><span>1군 업체</span></td>
+                                                <td class="text-center"><span>인테리어 플러스 A</span></td>
+                                                <td class="text-center"><span>서울시 강남구 역삼동 110-1</span></td>
+                                                <td class="text-center"><span>김철수</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt2">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">3 회</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 회</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>2</span></td>
+                                                <td class="text-center"><span>1군 업체</span></td>
+                                                <td class="text-center"><span>인테리어 플러스 B</span></td>
+                                                <td class="text-center"><span>서울시 강남구 역삼동 110-1</span></td>
+                                                <td class="text-center"><span>김철수</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt2">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">3 회</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 회</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>3</span></td>
+                                                <td class="text-center"><span>2군 업체</span></td>
+                                                <td class="text-center"><span>인테리어 플러스 C</span></td>
+                                                <td class="text-center"><span>서울시 강남구 역삼동 110-1</span></td>
+                                                <td class="text-center"><span>김철수</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt2">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">3 회</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 회</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>4</span></td>
+                                                <td class="text-center"><span>2군 업체</span></td>
+                                                <td class="text-center"><span>인테리어 플러스 D</span></td>
+                                                <td class="text-center"><span>서울시 강남구 역삼동 110-1</span></td>
+                                                <td class="text-center"><span>김철수</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt2">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">3 회</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 회</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="top-tab2">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead>
+                                            <tr class="table-active font-weight-bold">
+                                                <th>번호</th>
+                                                <th>등급</th>
+                                                <th>시공업체명</th>
+                                                <th>주소</th>
+                                                <th>담당자명</th>
+                                                <th>연락처</th>
+                                                <th>아이디</th>
+                                                <th>비밀번호</th>
+                                                <th>보수 횟수</th>
+                                                <th>공사 횟수</th>
+                                                <th>변경</th>
+                                                <th>삭제</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center"><span>1군 업체</span></td>
+                                                <td class="text-center"><span>인테리어 플러스 A</span></td>
+                                                <td class="text-center"><span>서울시 강남구 역삼동 110-1</span></td>
+                                                <td class="text-center"><span>김철수</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt2">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">3 회</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 회</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>2</span></td>
+                                                <td class="text-center"><span>1군 업체</span></td>
+                                                <td class="text-center"><span>인테리어 플러스 B</span></td>
+                                                <td class="text-center"><span>서울시 강남구 역삼동 110-1</span></td>
+                                                <td class="text-center"><span>김철수</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt2">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">3 회</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 회</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="top-tab3">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead>
+                                            <tr class="table-active font-weight-bold">
+                                                <th>번호</th>
+                                                <th>등급</th>
+                                                <th>시공업체명</th>
+                                                <th>주소</th>
+                                                <th>담당자명</th>
+                                                <th>연락처</th>
+                                                <th>아이디</th>
+                                                <th>비밀번호</th>
+                                                <th>보수 횟수</th>
+                                                <th>공사 횟수</th>
+                                                <th>변경</th>
+                                                <th>삭제</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center"><span>2군 업체</span></td>
+                                                <td class="text-center"><span>인테리어 플러스 C</span></td>
+                                                <td class="text-center"><span>서울시 강남구 역삼동 110-1</span></td>
+                                                <td class="text-center"><span>김철수</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt2">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">3 회</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 회</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>2</span></td>
+                                                <td class="text-center"><span>2군 업체</span></td>
+                                                <td class="text-center"><span>인테리어 플러스 D</span></td>
+                                                <td class="text-center"><span>서울시 강남구 역삼동 110-1</span></td>
+                                                <td class="text-center"><span>김철수</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt2">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">3 회</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 회</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ('common/M_layout_bottom.ejs') %>

@@ -1,0 +1,583 @@
+<%- include ('common/layout_top.ejs') %>
+
+
+<!-- Page header -->
+<div class="page-header">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline border-bottom">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>홈</a>
+                <span class="breadcrumb-item active">대시보드</span>
+            </div>
+
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+
+    <div class="page-header-content header-elements-lg-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">홈</span> - 대시보드</h4>
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+</div>
+<!-- /page header -->
+
+
+<!-- Page content -->
+<div class="page-content pt-0">
+    <%- include ('common/side_nav.ejs') %>
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content">
+
+            <!-- Dashboard content -->
+            <div class="row">
+                <div class="col-xl-12">
+
+                    <!-- 보수리스트 -->
+                    <div class="card">
+                        <div class="card-header header-elements-sm-inline">
+                            <h6 class="card-title font-weight-bold">보수 리스트 - 종료</h6>
+                            <div class="header-elements">
+                                <span class="badge badge-danger badge-pill">보수 종료 <%= repair.length %> 건</span>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table text-nowrap">
+                                <thead>
+                                <tr class="table-active">
+                                    <th>브랜드 및 지점</th>
+                                    <th>요청일</th>
+                                    <th>요청 제목</th>
+                                    <th>승인 상태</th>
+                                    <th>승인자</th>
+                                    <th>승인일</th>
+                                    <th>입찰 상태</th>
+                                    <th>입찰 마감일</th>
+                                    <th>입찰 담당자</th>
+                                    <th>보수 진행일</th>
+                                    <th>진행 상태</th>
+                                    <th class="text-center" style="width: 20px;"><i class="icon-arrow-down12"></i></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr v-for="repair in repairs">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="mr-3">
+                                                        <a href="#">
+                                                            <img src="/admin/global_assets/images/brands/mercedes-benz.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div>
+                                                        <a href="#" class="text-body font-weight-semibold">{{ repair.store.name }}</a>
+                                                        <div class="text-muted font-size-sm">
+                                                            <span class="badge badge-mark border-primary mr-1"></span>
+                                                            {{ repair.brand.name }} 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="text-muted">{{ (new Date(repair.created_at)).toLocaleDateString() }}</span></td>
+                                            <td><span class="text-muted"><a href="#" data-toggle="modal" data-target="#exampleModalLong">{{ repair.title }}</span></td>
+                                            <template v-if="repair.status == 0">
+                                                <td><span class="text-danger">미승인</span></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 1">
+                                                <td><span class="text-success">승인완료</span></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 2">
+                                                <td><span class="text-danger">반려</span></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 3">
+                                                <td><span class="text-success">승인완료</span></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 4">
+                                                <td><span class="text-success">승인완료</span></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 5">
+                                                <td><span class="text-success">승인완료</span></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 6">
+                                                <td><span class="text-success">승인완료</span></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 9">
+                                                <td><span class="text-danger">유찰</span></td>
+                                            </template>
+                                            <template v-else>
+                                                <td><span class="text-success">승인완료</span></td>
+                                            </template>
+                                                
+                                            <td><span class="font-weight-semibold mb-0">{{ repair.plan_confirm_user.manager_name }}</span></td>
+                                            <td><span class="text-muted">{{ (new Date(repair.plan_confirm_user.created_at)).toLocaleDateString() }}</span></td>
+                                      
+                                            <template v-else-if="repair.status == 0">
+                                                <td><a href="#" class="badge badge-pill badge-info" data-toggle="modal" data-target="#modal-repair">입찰 등록예정</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 1">
+                                                <td><td><a href="#" class="badge badge-pill badge-info" data-toggle="modal" data-target="#modal-repair">입찰 등록예정</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 2">
+                                                <td><a href="#" class="badge badge-pill badge-danger" data-toggle="modal" data-target="#modal-repair">입찰 진행중</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 3">
+                                                <td><a href="#" class="badge badge-pill badge-primary" data-toggle="modal" data-target="#modal-repair">입찰 진행중</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 4">
+                                                <td><a href="#" class="badge badge-pill badge-danger" data-toggle="modal" data-target="#modal-repair">입찰 마감</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 5">
+                                                <td><a href="#" class="badge badge-pill badge-danger" data-toggle="modal" data-target="#modal-repair">입찰 마감</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 6">
+                                                <td><a href="#" class="badge badge-pill badge-danger" data-toggle="modal" data-target="#modal-repair">입찰 마감</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 9">
+                                                <td><a href="#" class="badge badge-pill badge-danger" data-toggle="modal" data-target="#modal-repair">유찰</a></td>
+                                            </template>
+                                            <template v-else>
+                                                <td><span class="badge badge-primary">승인 완료</span></td>
+                                            </template>
+                                            <td><span class="text-muted">{{ (new Date(repair.repair_request.end_at)).toLocaleDateString() }}</span></td>
+                                            <td><span class="font-weight-semibold mb-0">{{ repair.plan_confirm_user.manager_name }}</span></td>
+                                            <td><span class="text-muted">{{ (new Date(repair.repair_request.end_at)).toLocaleDateString() }}</span></td>
+                                            <template v-if="repair.status == 0">
+                                                <td><a href="#" class="badge badge-pill badge-light" data-toggle="modal" data-target="#modal-repair">승인 대기중</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 1">
+                                                <td><a href="#" class="badge badge-pill badge-primary" data-toggle="modal" data-target="#modal-repair">승인 완료</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 2">
+                                                <td><a href="#" class="badge badge-pill badge-danger" data-toggle="modal" data-target="#modal-repair">반려</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 3">
+                                                <td><a href="#" class="badge badge-pill badge-primary" data-toggle="modal" data-target="#modal-repair">입찰 대기중</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 4">
+                                                <td><a href="#" class="badge badge-pill badge-primary" data-toggle="modal" data-target="#modal-repair">입찰업체 선정완료</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 5">
+                                                <td><a href="#" class="badge badge-pill badge-primary" data-toggle="modal" data-target="#modal-repair">보수 진행중</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 6">
+                                                <td><a href="#" class="badge badge-pill badge-success" data-toggle="modal" data-target="#modal-repair">보수 완료</a></td>
+                                            </template>
+                                            <template v-else-if="repair.status == 9">
+                                                <td><a href="#" class="badge badge-pill badge-danger" data-toggle="modal" data-target="#modal-repair">유찰</a></td>
+                                            </template>
+                                            <template v-else>
+                                                <td><a href="#" class="badge badge-pill badge-primary" data-toggle="modal" data-target="#modal-repair">승인 완료</a></td>
+                                            </template>
+                                            
+                                            <td class="text-center">
+                                                <div class="list-icons">
+                                                    <div class="dropdown">
+                                                        <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item" data-toggle="modal" data-target="#exampleModalLong" v-on:click="selectMore(repair)"><i class="icon-file-stats"></i> 보수 요청서 보기</a>
+                                                            <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-repair" v-on:click="selectMore(repair)"><i class="icon-file-text2"></i> 입찰 요청서 보기</a>
+                                                            <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal_bidding_proposal" v-on:click="selectMore(repair)"><i class="icon-file-locked"></i> 입찰 제안서 보기</a>
+                                                            <a href="#" class="dropdown-item"><i class="icon-file-locked" v-on:click="selectMore(repair)"></i> 작업계획서 보기</a>
+                                                            <a href="#" class="dropdown-item"><i class="icon-file-locked" v-on:click="selectMore(repair)"></i> 작업완료보고서 보기</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <!-- /보수 리스트 -->
+                </div>
+                <!-- /dashboard content -->
+
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+
+    <!-- Modal 보수 요청서-->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <template v-if="selectedPlan.repair_request != null">
+                <div class="modal-header bg-warning text-white">
+                    <h5 class="modal-title font-weight-bold mb-0" id="exampleModalLongTitle">보수 요청서</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card" style="border-right:unset; border-left:unset; ">
+                        <div class="border-2 rounded p-3">
+                            <dl class="mb-0">
+                                <dt><h6 class="font-weight-bold">보수 요청 제목</h6></dt>
+                                <dd id="title">{{selectedPlan.repair_request.title}}</dd>
+
+                                <dt><h6 class="font-weight-bold">보수 요청 내용</h6></dt>
+                                <dd id="contents">{{selectedPlan.repair_request.content}}</dd>
+                            </dl>
+                        </div>
+                        <div class="border-2 rounded p-3 mt-3">
+                            <dl class="mb-0">
+                                <dt><h6 class="font-weight-bold">사진 및 영상</h6></dt>
+                                <dd>
+                                    <div id="image_list" class="row">
+                                        <div class="col-sm-6 col-lg-3" id="image" v-for="repair_request_media in selectedPlan.repair_request.repair_request_media">
+                                            <div class="card">
+                                            <div class="card-img-actions m-1">
+                                            <img class="card-img img-fluid" :src="'http://49.50.160.206:14000/' + repair_request_media.media" alt="">
+                                            <div class="card-img-actions-overlay card-img">
+                                            <a :href="'http://49.50.160.206:14000/' + repair_request_media.media" class="btn btn-outline-white border-2 btn-icon rounded-pill" data-popup="lightbox" data-gallery="gallery1">
+                                            <i class="icon-plus3"></i></a>
+                                            <a href="#" class="btn btn-outline-white border-2 btn-icon rounded-pill ml-2">
+                                            <i class="icon-link"></i>
+                                            </a></div></div></div>
+                                        </div>
+
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                        <!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                    </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <!-- /modal 보수요청서-->
+
+    </div>
+    <!-- modal 입찰제안서-->
+    <div id="modal_bidding_proposal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-full">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title font-weight-bold">입찰 제안서 목록</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <template v-if="Object.keys(selectedPlan).length > 0">
+                        <div class="col-lg-4" v-for="bid_proposal in selectedPlan.repair_request.bid_proposals">
+                            <div class="card">
+                                <div class="card-header bg-white d-flex justify-content-between">
+                                    <span class="font-weight-bold">{{bid_proposal.interior_company.name }}
+                                        <span class="d-inline-flex align-items-center pl-1">
+                                        <i class="icon-star-full2 font-size-base text-warning ml-1"></i>
+                                        <i class="icon-star-full2 font-size-base text-warning ml-1"></i>
+                                        <i class="icon-star-full2 font-size-base text-warning ml-1"></i>
+                                        <i class="icon-star-full2 font-size-base text-warning ml-1"></i>
+                                        <i class="icon-star-full2 font-size-base text-warning ml-1"></i>
+                                        <span class="text-muted ml-2">{{ bid_proposal.interior_company.construction_examples.length }}</span>
+                                        </span>
+                                    </span>
+
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group border-x-0 rounded-0 border-top">
+                                        <li class="list-group-item" v-for="bid_proposal_detail in bid_proposal.bid_proposal_details">
+                                            <span class="font-weight-semibold">{{ bid_proposal_detail.title }}:</span>
+                                            <div class="ml-auto font-weight-bold">{{ Number(bid_proposal_detail.price).toLocaleString() }} 원</div>
+                                        </li>
+                                   
+                                        
+                                    </ul>
+                                    <ul class="list-group border-x-0 rounded-0 border-top">
+                                        <li class="list-group-item">
+                                            <h5 class="font-weight-bold">최종 견적 금액:</h5>
+                                            <h3 class="ml-auto font-weight-bold text-success">{{ Number(bid_proposal.price).toLocaleString() }} 원</h3>
+                                        </li>
+                                    </ul>
+                                    <blockquote class="blockquote d-flex py-2 mb-0">
+                                        <div class="mr-3 align-self-start">
+                                            <i class="icon-comment-discussion icon-3x text-muted opacity-25"></i>
+                                        </div>
+
+                                        <div>
+                                            <p class="mb-1">{{ bid_proposal.note }}</p>
+                                        </div>
+                                    </blockquote>
+                                </div>
+
+                                <div class="card-footer bg-white d-flex justify-content-between">
+                                    <span class="text-muted">서울특별시 강남구 삼성동 11-1 번지 1층</span>
+
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item"><a href="#">업체 낙찰</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        </template>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">유찰</button>
+
+                    <button type="button" class="btn btn-link" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /modal -->
+    <!-- Modal 입찰요청서- 보수 -->
+    <div class="modal fade" id="modal-repair" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <template v-if="Object.keys(selectedPlan).length > 0">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="exampleModalLongTitle">{{selectedPlan.repair_request.title}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card" style="border-right:unset; border-left:unset; ">
+                        <div class="border-2 rounded p-3">
+                            <dl class="mb-0">
+                                <dt class="font-weight-bold">보수 완료일</dt>
+                                <dd>{{ (new Date(selectedPlan.repair_request.deadline_at)).toLocaleDateString() }}</dd>
+                                
+                                <dt class="font-weight-bold">보수 현장 주소</dt>
+                                <dd>{{ selectedPlan.repair_request.address }}</dd>
+                            </dl>
+                        </div>
+                        <div class="border-2 rounded p-3 mt-3">
+                            <dl class="mb-0">
+                                <dt class="font-weight-bold">입찰 담당자</dt>
+                                <dd>{{ selectedPlan.plan_confirm_user.manager_name }}</dd>
+                                <dt class="font-weight-bold">입찰 마감일</dt>
+                                <dd>{{ (new Date(selectedPlan.repair_request.end_at)).toLocaleDateString() }}</dd>
+                            </dl>
+                        </div>
+                        <div class="border-2 rounded p-3 mt-3">
+                            <dl class="mb-0">
+                                <dt class="font-weight-bold">공고 내용</dt>
+                                <dd>{{ selectedPlan.repair_request.content }}</dd>
+                            </dl>
+                        </div>
+                        <div class="border-2 rounded p-3 mt-3">
+                            <dl class="mb-0">
+                                <dt class="font-weight-bold">사진 및 영상</dt>
+                                <dd>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-lg-3" v-for="media in selectedPlan.repair_request.repair_request_media">
+                                            <div class="card">
+                                                <div class="card-img-actions m-1">
+                                                    <img class="card-img img-fluid" :src="'http://49.50.160.206:14000/'+media.media" alt="">
+                                                    <div class="card-img-actions-overlay card-img">
+                                                        <a :href="'http://49.50.160.206:14000/'+media.media" class="btn btn-outline-white border-2 btn-icon rounded-pill" data-popup="lightbox" data-gallery="gallery1">
+                                                            <i class="icon-plus3"></i>
+                                                        </a>
+
+                                                        <a href="#" class="btn btn-outline-white border-2 btn-icon rounded-pill ml-2">
+                                                            <i class="icon-link"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="border-2 rounded p-3 mt-3">
+                            <dl>
+                                <dt class="font-weight-bold">첨부자료</dt>
+                                <dd>
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item" v-for="file in selectedPlan.repair_request.repair_request_files">
+                                            <div class="card bg-light py-2 px-3 mt-3 mb-0">
+                                                <div class="media my-1">
+                                                    <div class="mr-3 align-self-center"><i class="icon-file-pdf icon-2x text-danger top-0"></i></div>
+                                                    <div class="media-body">
+                                                        <div class="font-weight-semibold">{{file.file}}</div>
+
+                                                        <ul class="list-inline list-inline-condensed mb-0">
+                                                            <!--<li class="list-inline-item text-muted">174 KB</li>-->
+                                                            <li class="list-inline-item"><a :href="'http://49.50.160.206:14000/'+file.file">View</a></li>
+                                                            <li class="list-inline-item"><a :href="'http://49.50.160.206:14000/'+file.file" download>Download</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                        <!--
+                        <div class="border-2 rounded p-3 mt-3">
+                            <dl>
+                                <dt class="font-weight-bold">필수 자재</dt>
+                                <dd>
+                                    <ul class="list-group border-x-0 rounded-0 border-top">
+                                        <li class="list-group-item">
+                                            <span class="font-weight-semibold">자재 A:</span>
+                                            <div class="ml-auto font-weight-bold">300,000 원</div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="font-weight-semibold">자재 B:</span>
+                                            <div class="ml-auto font-weight-bold">100,000 원</div>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                        -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                    </div>
+                </div>
+            </div>
+            </template>
+        </div>
+    </div>
+        <!-- /modal -->
+
+        <!-- Modal - 작업계획서 -->
+        <div class="modal fade" id="modal-repair-plan" tabindex="-1" role="dialog" aria-labelledby="modal-plan" aria-hidden="true">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title font-weight-bold" id="modal-plan">작업 계획서</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <template v-if="Object.keys(selectedPlan).length > 0">
+                    <div class="modal-body">
+                        <div class="card" style="border-right:unset; border-left:unset; ">
+                            <template v-if="selectedPlan.repair_request.work_plan != null">
+                            <div class="border-2 rounded p-3">
+                                <dl class="mb-0">
+                                    <dt class="font-weight-bold">보수 업체명</dt>
+                                    <dd>{{ selectedPlan.repair_request.bid_proposal.interior_company.name }}</dd>
+
+                                    <dt class="font-weight-bold">연락처</dt>
+                                    <dd>{{ selectedPlan.repair_request.bid_proposal.interior_company.manager_tel }}</dd>
+
+                                    <dt class="font-weight-bold">업체 주소</dt>
+                                    <dd>{{ selectedPlan.repair_request.bid_proposal.interior_company.address }}</dd>
+                                </dl>
+                            </div>
+                            </template>
+                            <template v-if="selectedPlan.repair_request.work_plan != null">
+                            <div class="border-2 rounded p-3 mt-3">
+                                <dl class="mb-0">
+                                    <dt class="font-weight-bold">작업 예정일</dt>
+                                    <dd>{{ (new Date(selectedPlan.repair_request.work_plan.start_at)).toLocaleDateString() }} ~ {{ (new Date(selectedPlan.repair_request.work_plan.end_at)).toLocaleDateString() }}</dd>
+
+                                    <dt class="font-weight-bold">작업 예정 시간</dt>
+                                    <dd>{{ (new Date(selectedPlan.repair_request.work_plan.start_at)).toLocaleDateString() }} ~ {{ (new Date(selectedPlan.repair_request.work_plan.end_at)).toLocaleDateString() }}</dd>
+
+                                    <dt class="font-weight-bold">작업 내용</dt>
+                                    <dd>{{ selectedPlan.contents }}</dd>
+                                </dl>
+                            </div>
+                            <div class="border-2 rounded p-3 mt-3" v-for="work_plan_worker in selectedPlan.repair_request.work_plan.work_plan_workers">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <dl class="mb-0">
+                                            <dt class="font-weight-bold">작업자 이름</dt>
+                                            <dd>{{ work_plan_worker.name }}</dd>
+
+                                            <dt class="font-weight-bold">작업자 연락처</dt>
+                                            <dd>{{ work_plan_worker.tel }}</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <dl class="mb-0">
+                                            <dt class="font-weight-bold">작업자 주민등록번호</dt>
+                                            <dd>{{ work_plan_worker.registration_number }}</dd>
+
+                                            <dt class="font-weight-bold">작업자 차량번호</dt>
+                                            <dd>{{ work_plan_worker.car_number }}</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            </template>
+                          
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                            <!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                        </div>
+                    </div>
+                    </template>
+                </div>
+            </div>
+            <!-- /modal -->
+
+    <!-- /notifications -->
+<%- include ('common/layout_bottom.ejs') %>
+
+
+<script>
+    var app = new Vue({
+          el: '#vue_app',
+          data: {
+            curExamMenu: "전체",
+            selectedPlan:{},
+            repairs:[],
+            constructions:[],
+          },
+          created() {
+            window.Vue = this
+            this.getPlans();
+           
+          },
+          mounted() {
+            
+          },
+          methods: {
+            getPlans : function() {
+                $.ajax({
+                url:"http://49.50.160.206:14000/api/v1/plan/client_plans",
+                type:"POST",
+                body: {
+                    client_id:'1'
+                },
+                json:true,
+                success: function(result) {
+                    if (result) {
+                        window.Vue.repairs = result.filter(plan => plan.plan_type == 0).filter(plan => plan.status == 6)
+                        console.log("##### repair 3",window.Vue.repairs.length);
+                        console.log("##### constu 4",window.Vue.constructions.length);
+                        window.Vue.selectedPlan = window.Vue.repairs[0];
+                    }
+                }
+              });
+            },
+
+            selectMore : function(planModel){
+                console.log("====== plan datas :",planModel)
+                this.selectedPlan = planModel/*JSON.parse(planModel);*/
+                console.log("====== plan id:",this.selectedPlan.id);
+            },
+          }
+      })
+
+</script>

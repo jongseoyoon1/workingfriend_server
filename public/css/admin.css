@@ -1,0 +1,8 @@
+.table thead th {}
+.table thead th,
+.table tbody td {font-size:.775rem; text-align:center;}
+.table tbody td:first-child {text-align:left;}
+.grid-list ul {padding:0;}
+.grid-list ul li {list-style:none;}
+
+.table thead th {font-weight:bold;}

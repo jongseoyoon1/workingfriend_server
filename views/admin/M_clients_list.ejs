@@ -1,0 +1,668 @@
+<%- include ('common/M_layout_top.ejs') %>
+<!-- Page header -->
+<div class="page-header mb-3">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline border-bottom">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="/" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>홈</a>
+                <span class="breadcrumb-item active">고객사 조회</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page header -->
+<!-- Page content -->
+<div class="page-content pt-0">
+    <%- include ('common/M_side_nav.ejs') %>
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title font-weight-bold">고객사 목록</h5>
+                        </div>
+
+                        <div class="card-body">
+                            <ul class="nav nav-tabs nav-tabs-top">
+                                <li class="nav-item"><a href="#top-tab1" class="nav-link active" data-toggle="tab">전체</a></li>
+                                <li class="nav-item"><a href="#top-tab2" class="nav-link" data-toggle="tab">A 자동차 회사</a></li>
+                                <li class="nav-item"><a href="#top-tab3" class="nav-link" data-toggle="tab">B 자동차 회사</a></li>
+                                <li class="nav-item"><a href="#top-tab4" class="nav-link" data-toggle="tab">C 자동차 회사</a></li>
+                                <li class="nav-item"><a href="#top-tab5" class="nav-link" data-toggle="tab">D 자동차 회사</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="top-tab1">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead>
+                                            <tr class="table-active font-weight-bold">
+                                                <th>번호</th>
+                                                <th>고객사 코드</th>
+                                                <th>고객사명</th>
+                                                <th>담당자명</th>
+                                                <th>연락처</th>
+                                                <th>관리자 아이디</th>
+                                                <th>비밀번호</th>
+                                                <th>브랜드 갯수</th>
+                                                <th>지점 갯수</th>
+                                                <th>변경</th>
+                                                <th>삭제</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center"><span>C-1231</span></td>
+                                                <td class="text-center"><span>A 자동차 회사</span></td>
+                                                <td class="text-center"><span>김철수</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt2">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">3 개</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 개</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>2</span></td>
+                                                <td class="text-center"><span>C-1231</span></td>
+                                                <td class="text-center"><span>B 자동차 회사</span></td>
+                                                <td class="text-center"><span>김철수</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt2">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">1 개</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 개</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>3</span></td>
+                                                <td class="text-center"><span>C-1231</span></td>
+                                                <td class="text-center"><span>C 자동차 회사</span></td>
+                                                <td class="text-center"><span>김철수</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt2">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">2 개</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 개</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>4</span></td>
+                                                <td class="text-center"><span>C-1231</span></td>
+                                                <td class="text-center"><span>D 자동차 회사</span></td>
+                                                <td class="text-center"><span>김철수</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt2">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">1 개</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 개</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="top-tab2">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead>
+                                            <tr class="table-active">
+                                                <th>번호</th>
+                                                <th>브랜드명</th>
+                                                <th>지점명</th>
+                                                <th>매장 코드</th>
+                                                <th>매장 연락처</th>
+                                                <th>매장 담당자</th>
+                                                <th>보수 승인자</th>
+                                                <th>입찰 담당자</th>
+                                                <th>주소</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>테슬라</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>2</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>테슬라</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>3</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>테슬라</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>4</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/honda.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>혼다</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="top-tab3">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead>
+                                            <tr class="table-active">
+                                                <th>번호</th>
+                                                <th>브랜드명</th>
+                                                <th>지점명</th>
+                                                <th>매장 코드</th>
+                                                <th>매장 연락처</th>
+                                                <th>매장 담당자</th>
+                                                <th>보수 승인자</th>
+                                                <th>입찰 담당자</th>
+                                                <th>주소</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>테슬라</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>2</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>테슬라</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>3</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>테슬라</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>4</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/honda.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>혼다</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="top-tab4">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead>
+                                            <tr class="table-active">
+                                                <th>번호</th>
+                                                <th>브랜드명</th>
+                                                <th>지점명</th>
+                                                <th>매장 코드</th>
+                                                <th>매장 연락처</th>
+                                                <th>매장 담당자</th>
+                                                <th>보수 승인자</th>
+                                                <th>입찰 담당자</th>
+                                                <th>주소</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>테슬라</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>2</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>테슬라</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>3</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>테슬라</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>4</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/honda.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>혼다</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="top-tab5">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead>
+                                            <tr class="table-active">
+                                                <th>번호</th>
+                                                <th>브랜드명</th>
+                                                <th>지점명</th>
+                                                <th>매장 코드</th>
+                                                <th>매장 연락처</th>
+                                                <th>매장 담당자</th>
+                                                <th>보수 승인자</th>
+                                                <th>입찰 담당자</th>
+                                                <th>주소</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>테슬라</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>2</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>테슬라</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>3</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>테슬라</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>4</span></td>
+                                                <td class="text-center">
+                                                    <img src="/admin/global_assets/images/brands/honda.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    <span>혼다</span>
+                                                </td>
+                                                <td class="text-center"><span>강남점</span></td>
+                                                <td class="text-center"><span>8787</span></td>
+                                                <td class="text-center"><span>010-1234-5678</span></td>
+                                                <td class="text-center"><span>홍길동 매니저</span></td>
+                                                <td class="text-center"><span>김철수 대리</span></td>
+                                                <td class="text-center"><span>박철수 과장</span></td>
+                                                <td class="text-center"><span>서울 강남구 삼성동 111-1</span></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Content area -->
+
+    </div>
+    <!-- /Main content -->
+
+</div>
+<!-- /Page content -->
+
+
+<!-- Modal - 승인 매장 -->
+<div class="modal fade" id="modal-user-store" tabindex="-1" role="dialog" aria-labelledby="modal-store" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold" id="modal-store">자동차 회사 브랜드</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card" style="border-right:unset; border-left:unset; ">
+                    <div class="table-responsive">
+                        <table class="table text-nowrap">
+                            <colgroup>
+                                <col style="width:5%">
+                                <col>
+                                <col style="width:5%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                            <tr class="table-active">
+                                <th>번호</th>
+                                <th>브랜드명</th>
+                                <th>지점갯수</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td class="text-center">
+                                    <div class="d-flex align-items-center justify-content-left">
+                                        <div class="mr-3">
+                                            <a href="#">
+                                                <img src="/admin/global_assets/images/brands/mercedes-benz.svg" class="rounded-circle" width="32" height="32" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="text-left">
+                                            <div class="text-muted font-size-sm">
+                                                <span class="badge badge-mark border-primary mr-1"></span>
+                                                메르세데스 벤츠
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-center">3 개</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">2</td>
+                                <td class="text-center">
+                                    <div class="d-flex align-items-center justify-content-left">
+                                        <div class="mr-3">
+                                            <a href="#">
+                                                <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="text-left">
+                                            <div class="text-muted font-size-sm">
+                                                <span class="badge badge-mark border-primary mr-1"></span>
+                                                테슬라
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-center">3 개</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">3</td>
+                                <td class="text-center">
+                                    <div class="d-flex align-items-center justify-content-left">
+                                        <div class="mr-3">
+                                            <a href="#">
+                                                <img src="/admin/global_assets/images/brands/honda.svg" class="rounded-circle" width="32" height="32" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="text-left">
+                                            <div class="text-muted font-size-sm">
+                                                <span class="badge badge-mark border-primary mr-1"></span>
+                                                혼다
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-center">3 개</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                    <!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /modal -->
+
+<!-- Modal - 담당 매장 -->
+<div class="modal fade" id="modal-user-store2" tabindex="-1" role="dialog" aria-labelledby="modal-store2" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold" id="modal-store2">담당 매장</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card" style="border-right:unset; border-left:unset; ">
+                    <div class="table-responsive">
+                        <table class="table text-nowrap">
+                            <colgroup>
+                                <col style="width:5%">
+                                <col>
+                                <col style="width:5%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                            <tr class="table-active">
+                                <th>번호</th>
+                                <th>지점명</th>
+                                <th>매장번호</th>
+                                <th>주소</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-left">
+                                        <div class="mr-3">
+                                            <a href="#">
+                                                <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="text-left">
+                                            <a href="#" class="text-body">강남점</a>
+                                            <div class="text-muted font-size-sm">
+                                                <span class="badge badge-mark border-primary mr-1"></span>
+                                                테슬라
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-center">1234</td>
+                                <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-left">
+                                        <div class="mr-3">
+                                            <a href="#">
+                                                <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="text-left">
+                                            <a href="#" class="text-body">강남점</a>
+                                            <div class="text-muted font-size-sm">
+                                                <span class="badge badge-mark border-primary mr-1"></span>
+                                                테슬라
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-center">1234</td>
+                                <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-left">
+                                        <div class="mr-3">
+                                            <a href="#">
+                                                <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="text-left">
+                                            <a href="#" class="text-body">강남점</a>
+                                            <div class="text-muted font-size-sm">
+                                                <span class="badge badge-mark border-primary mr-1"></span>
+                                                테슬라
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-center">1234</td>
+                                <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-left">
+                                        <div class="mr-3">
+                                            <a href="#">
+                                                <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="text-left">
+                                            <a href="#" class="text-body">강남점</a>
+                                            <div class="text-muted font-size-sm">
+                                                <span class="badge badge-mark border-primary mr-1"></span>
+                                                테슬라
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-center">1234</td>
+                                <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                    <!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /modal -->
+
+<%- include ('common/M_layout_bottom.ejs') %>

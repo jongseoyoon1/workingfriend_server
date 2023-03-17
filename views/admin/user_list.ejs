@@ -1,0 +1,497 @@
+<%- include ('common/layout_top.ejs') %>
+
+
+<!-- Page header -->
+<div class="page-header">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline border-bottom">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>홈</a>
+                <span class="breadcrumb-item active">사원관리</span>
+            </div>
+
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+
+    <div class="page-header-content header-elements-lg-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">사원 관리</span> - 목록</h4>
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+</div>
+<!-- /page header -->
+
+
+<!-- Page content -->
+<div class="page-content pt-0">
+    <%- include ('common/side_nav.ejs') %>
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        <!-- Content area -->
+        <div class="content">
+
+            <!-- Dashboard content -->
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="card-title">사원 목록</h6>
+                        </div>
+
+                        <div class="card-body">
+                            <ul class="nav nav-tabs nav-tabs-top">
+                                <li class="nav-item"><a href="#top-tab1" class="nav-link active" data-toggle="tab">전체</a></li>
+                                <li class="nav-item"><a href="#top-tab2" class="nav-link" data-toggle="tab">메르세데스 벤츠</a></li>
+                                <li class="nav-item"><a href="#top-tab3" class="nav-link" data-toggle="tab">테슬라</a></li>
+                                <li class="nav-item"><a href="#top-tab4" class="nav-link" data-toggle="tab">혼다</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="top-tab1">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead>
+                                            <tr class="table-active">
+                                                <th>번호</th>
+                                                <th>사원번호</th>
+                                                <th>사원명</th>
+                                                <th>직급</th>
+                                                <th>연락처</th>
+                                                <th>아이디</th>
+                                                <th>비밀번호</th>
+                                                <th>승인 매장</th>
+                                                <th>담당 매장</th>
+                                                <th>정보 변경</th>
+                                                <th>직원 삭제</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center"><span>2678</span></td>
+                                                <td class="text-center"><span>홍길동</span></td>
+                                                <td class="text-center"><span>대리</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">0 개</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 개</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center"><span>2678</span></td>
+                                                <td class="text-center"><span>홍길동</span></td>
+                                                <td class="text-center"><span>대리</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">0 개</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 개</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center"><span>2678</span></td>
+                                                <td class="text-center"><span>홍길동</span></td>
+                                                <td class="text-center"><span>대리</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">0 개</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 개</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center"><span>2678</span></td>
+                                                <td class="text-center"><span>홍길동</span></td>
+                                                <td class="text-center"><span>대리</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><span>userID</span></td>
+                                                <td class="text-center"><a href="#" id="prompt">보기</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store">0 개</a></td>
+                                                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal-user-store2">2 개</a></td>
+                                                <td class="text-center"><a href="#">변경</a></td>
+                                                <td class="text-center"><a href="#">삭제</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="top-tab2">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead>
+                                            <tr class="table-active">
+                                                <th>번호</th>
+                                                <th>사원번호</th>
+                                                <th>사원명</th>
+                                                <th>직급</th>
+                                                <th>연락처</th>
+                                                <th>승인 매장</th>
+                                                <th>담당 매장</th>
+                                                <th class="text-center" style="width: 20px;"><i class="icon-arrow-down12"></i></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center"><span>2678</span></td>
+                                                <td class="text-center"><span>홍길동</span></td>
+                                                <td class="text-center"><span>대리</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><a href="#">0 개</a></td>
+                                                <td class="text-center"><a href="#">2 개</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center"><span>2678</span></td>
+                                                <td class="text-center"><span>홍길동</span></td>
+                                                <td class="text-center"><span>대리</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><a href="#">0 개</a></td>
+                                                <td class="text-center"><a href="#">2 개</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="top-tab3">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead>
+                                            <tr class="table-active">
+                                                <th>번호</th>
+                                                <th>사원번호</th>
+                                                <th>사원명</th>
+                                                <th>직급</th>
+                                                <th>연락처</th>
+                                                <th>승인 매장</th>
+                                                <th>담당 매장</th>
+                                                <th class="text-center" style="width: 20px;"><i class="icon-arrow-down12"></i></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center"><span>2678</span></td>
+                                                <td class="text-center"><span>홍길동</span></td>
+                                                <td class="text-center"><span>대리</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><a href="#">0 개</a></td>
+                                                <td class="text-center"><a href="#">2 개</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="top-tab4">
+                                    <div class="table-responsive">
+                                        <table class="table text-nowrap">
+                                            <thead>
+                                            <tr class="table-active">
+                                                <th>번호</th>
+                                                <th>사원번호</th>
+                                                <th>사원명</th>
+                                                <th>직급</th>
+                                                <th>연락처</th>
+                                                <th>승인 매장</th>
+                                                <th>담당 매장</th>
+                                                <th class="text-center" style="width: 20px;"><i class="icon-arrow-down12"></i></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center"><span>1</span></td>
+                                                <td class="text-center"><span>2678</span></td>
+                                                <td class="text-center"><span>홍길동</span></td>
+                                                <td class="text-center"><span>대리</span></td>
+                                                <td class="text-center"><span>010-5638-4567</span></td>
+                                                <td class="text-center"><a href="#">0 개</a></td>
+                                                <td class="text-center"><a href="#">2 개</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+    <!-- Modal - 승인 매장 -->
+    <div class="modal fade" id="modal-user-store" tabindex="-1" role="dialog" aria-labelledby="modal-store" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="modal-store">승인 매장</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card" style="border-right:unset; border-left:unset; ">
+                        <div class="table-responsive">
+                            <table class="table text-nowrap">
+                                <colgroup>
+                                    <col style="width:5%">
+                                    <col>
+                                    <col style="width:5%;">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                <tr class="table-active">
+                                    <th>번호</th>
+                                    <th>지점명</th>
+                                    <th>매장번호</th>
+                                    <th>주소</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>
+                                        <div class="d-flex align-items-center justify-content-left">
+                                            <div class="mr-3">
+                                                <a href="#">
+                                                    <img src="/admin/global_assets/images/brands/mercedes-benz.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="text-left">
+                                                <a href="#" class="text-body">강남점</a>
+                                                <div class="text-muted font-size-sm">
+                                                    <span class="badge badge-mark border-primary mr-1"></span>
+                                                    메르세데스 벤츠
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">1234</td>
+                                    <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>
+                                        <div class="d-flex align-items-center justify-content-left">
+                                            <div class="mr-3">
+                                                <a href="#">
+                                                    <img src="/admin/global_assets/images/brands/mercedes-benz.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="text-left">
+                                                <a href="#" class="text-body">강남점</a>
+                                                <div class="text-muted font-size-sm">
+                                                    <span class="badge badge-mark border-primary mr-1"></span>
+                                                    메르세데스 벤츠
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">1234</td>
+                                    <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>
+                                        <div class="d-flex align-items-center justify-content-left">
+                                            <div class="mr-3">
+                                                <a href="#">
+                                                    <img src="/admin/global_assets/images/brands/mercedes-benz.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="text-left">
+                                                <a href="#" class="text-body">강남점</a>
+                                                <div class="text-muted font-size-sm">
+                                                    <span class="badge badge-mark border-primary mr-1"></span>
+                                                    메르세데스 벤츠
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">1234</td>
+                                    <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>
+                                        <div class="d-flex align-items-center justify-content-left">
+                                            <div class="mr-3">
+                                                <a href="#">
+                                                    <img src="/admin/global_assets/images/brands/mercedes-benz.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="text-left">
+                                                <a href="#" class="text-body">강남점</a>
+                                                <div class="text-muted font-size-sm">
+                                                    <span class="badge badge-mark border-primary mr-1"></span>
+                                                    메르세데스 벤츠
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">1234</td>
+                                    <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                        <!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- /modal -->
+
+        <!-- Modal - 담당 매장 -->
+        <div class="modal fade" id="modal-user-store2" tabindex="-1" role="dialog" aria-labelledby="modal-store2" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title font-weight-bold" id="modal-store2">담당 매장</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card" style="border-right:unset; border-left:unset; ">
+                            <div class="table-responsive">
+                                <table class="table text-nowrap">
+                                    <colgroup>
+                                        <col style="width:5%">
+                                        <col>
+                                        <col style="width:5%;">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                    <tr class="table-active">
+                                        <th>번호</th>
+                                        <th>지점명</th>
+                                        <th>매장번호</th>
+                                        <th>주소</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td>
+                                            <div class="d-flex align-items-center justify-content-left">
+                                                <div class="mr-3">
+                                                    <a href="#">
+                                                        <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="text-left">
+                                                    <a href="#" class="text-body">강남점</a>
+                                                    <div class="text-muted font-size-sm">
+                                                        <span class="badge badge-mark border-primary mr-1"></span>
+                                                        테슬라
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">1234</td>
+                                        <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td>
+                                            <div class="d-flex align-items-center justify-content-left">
+                                                <div class="mr-3">
+                                                    <a href="#">
+                                                        <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="text-left">
+                                                    <a href="#" class="text-body">강남점</a>
+                                                    <div class="text-muted font-size-sm">
+                                                        <span class="badge badge-mark border-primary mr-1"></span>
+                                                        테슬라
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">1234</td>
+                                        <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td>
+                                            <div class="d-flex align-items-center justify-content-left">
+                                                <div class="mr-3">
+                                                    <a href="#">
+                                                        <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="text-left">
+                                                    <a href="#" class="text-body">강남점</a>
+                                                    <div class="text-muted font-size-sm">
+                                                        <span class="badge badge-mark border-primary mr-1"></span>
+                                                        테슬라
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">1234</td>
+                                        <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td>
+                                            <div class="d-flex align-items-center justify-content-left">
+                                                <div class="mr-3">
+                                                    <a href="#">
+                                                        <img src="/admin/global_assets/images/brands/tesla.svg" class="rounded-circle" width="32" height="32" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="text-left">
+                                                    <a href="#" class="text-body">강남점</a>
+                                                    <div class="text-muted font-size-sm">
+                                                        <span class="badge badge-mark border-primary mr-1"></span>
+                                                        테슬라
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">1234</td>
+                                        <td><span>서울특별시 강남구 삼성동 11-11번지 1층</span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                            <!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- /modal -->
+
+
+    <!-- /notifications -->
+<%- include ('common/layout_bottom.ejs') %>
