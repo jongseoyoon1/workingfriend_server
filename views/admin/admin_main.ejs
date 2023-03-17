@@ -117,7 +117,7 @@
                                                         <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-repair" v-on:click="selectMore(repair)"><i class="icon-file-text2"></i> 입찰 요청서 보기</a> 
                                                         <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal_bidding_proposal" v-on:click="selectMore(repair)"><i class="icon-file-locked"></i> 입찰 제안서 보기</a>
                                                         <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-repair-plan" v-on:click="selectMore(repair)"><i class="icon-file-locked"></i> 작업계획서 보기</a>
-                                                        <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업완료보고서 보기</a>
+                                                        <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-repair-end-report"><i v-on:click="selectMore(construction)" class="icon-file-locked"></i> 작업완료보고서 보기</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -206,7 +206,7 @@
                                                         <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-repair" v-on:click="selectMore(construction)"><i class="icon-file-text2"></i> 입찰 요청서 보기</a>
                                                         <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal_bidding_proposal" v-on:click="selectMore(construction)"><i class="icon-file-locked"></i> 입찰 제안서 보기</a>
                                                         <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-repair-plan" v-on:click="selectMore(construction)"><i class="icon-file-locked"></i> 작업계획서 보기</a>
-                                                        <a href="#" class="dropdown-item"><i class="icon-file-locked"></i> 작업완료보고서 보기</a>
+                                                        <a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-repair-end-report"><i v-on:click="selectMore(construction)" class="icon-file-locked"></i> 작업완료보고서 보기</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -478,82 +478,189 @@
     </div>
         <!-- /modal -->
 
-        <!-- Modal - 작업계획서 -->
-        <div class="modal fade" id="modal-repair-plan" tabindex="-1" role="dialog" aria-labelledby="modal-plan" aria-hidden="true">
-            <div class="modal-dialog modal-md" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title font-weight-bold" id="modal-plan">작업 계획서</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <template v-if="Object.keys(selectedPlan).length > 0">
-                    <div class="modal-body">
-                        <div class="card" style="border-right:unset; border-left:unset; ">
-                            <template v-if="selectedPlan.repair_request.work_plan != null">
-                            <div class="border-2 rounded p-3">
-                                <dl class="mb-0">
-                                    <dt class="font-weight-bold">보수 업체명</dt>
-                                    <dd>{{ selectedPlan.repair_request.bid_proposal.interior_company.name }}</dd>
+    <!-- Modal - 작업계획서 -->
+    <div class="modal fade" id="modal-repair-plan" tabindex="-1" role="dialog" aria-labelledby="modal-plan" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="modal-plan">작업 계획서</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <template v-if="Object.keys(selectedPlan).length > 0">
+                <div class="modal-body">
+                    <div class="card" style="border-right:unset; border-left:unset; ">
+                        <template v-if="selectedPlan.repair_request.work_plan != null">
+                        <div class="border-2 rounded p-3">
+                            <dl class="mb-0">
+                                <dt class="font-weight-bold">보수 업체명</dt>
+                                <dd>{{ selectedPlan.repair_request.bid_proposal.interior_company.name }}</dd>
 
-                                    <dt class="font-weight-bold">연락처</dt>
-                                    <dd>{{ selectedPlan.repair_request.bid_proposal.interior_company.manager_tel }}</dd>
+                                <dt class="font-weight-bold">연락처</dt>
+                                <dd>{{ selectedPlan.repair_request.bid_proposal.interior_company.manager_tel }}</dd>
 
-                                    <dt class="font-weight-bold">업체 주소</dt>
-                                    <dd>{{ selectedPlan.repair_request.bid_proposal.interior_company.address }}</dd>
-                                </dl>
-                            </div>
-                            </template>
-                            <template v-if="selectedPlan.repair_request.work_plan != null">
-                            <div class="border-2 rounded p-3 mt-3">
-                                <dl class="mb-0">
-                                    <dt class="font-weight-bold">작업 예정일</dt>
-                                    <dd>{{ (new Date(selectedPlan.repair_request.work_plan.start_at)).toLocaleDateString() }} ~ {{ (new Date(selectedPlan.repair_request.work_plan.end_at)).toLocaleDateString() }}</dd>
+                                <dt class="font-weight-bold">업체 주소</dt>
+                                <dd>{{ selectedPlan.repair_request.bid_proposal.interior_company.address }}</dd>
+                            </dl>
+                        </div>
+                        </template>
+                        <template v-if="selectedPlan.repair_request.work_plan != null">
+                        <div class="border-2 rounded p-3 mt-3">
+                            <dl class="mb-0">
+                                <dt class="font-weight-bold">작업 예정일</dt>
+                                <dd>{{ (new Date(selectedPlan.repair_request.work_plan.start_at)).toLocaleDateString() }} ~ {{ (new Date(selectedPlan.repair_request.work_plan.end_at)).toLocaleDateString() }}</dd>
 
-                                    <dt class="font-weight-bold">작업 예정 시간</dt>
-                                    <dd>{{ (new Date(selectedPlan.repair_request.work_plan.start_at)).toLocaleDateString() }} ~ {{ (new Date(selectedPlan.repair_request.work_plan.end_at)).toLocaleDateString() }}</dd>
+                                <dt class="font-weight-bold">작업 예정 시간</dt>
+                                <dd>{{ (new Date(selectedPlan.repair_request.work_plan.start_at)).toLocaleDateString() }} ~ {{ (new Date(selectedPlan.repair_request.work_plan.end_at)).toLocaleDateString() }}</dd>
 
-                                    <dt class="font-weight-bold">작업 내용</dt>
-                                    <dd>{{ selectedPlan.contents }}</dd>
-                                </dl>
-                            </div>
-                            <div class="border-2 rounded p-3 mt-3" v-for="work_plan_worker in selectedPlan.repair_request.work_plan.work_plan_workers">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <dl class="mb-0">
-                                            <dt class="font-weight-bold">작업자 이름</dt>
-                                            <dd>{{ work_plan_worker.name }}</dd>
+                                <dt class="font-weight-bold">작업 내용</dt>
+                                <dd>{{ selectedPlan.contents }}</dd>
+                            </dl>
+                        </div>
+                        <div class="border-2 rounded p-3 mt-3" v-for="work_plan_worker in selectedPlan.repair_request.work_plan.work_plan_workers">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <dl class="mb-0">
+                                        <dt class="font-weight-bold">작업자 이름</dt>
+                                        <dd>{{ work_plan_worker.name }}</dd>
 
-                                            <dt class="font-weight-bold">작업자 연락처</dt>
-                                            <dd>{{ work_plan_worker.tel }}</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <dl class="mb-0">
-                                            <dt class="font-weight-bold">작업자 주민등록번호</dt>
-                                            <dd>{{ work_plan_worker.registration_number }}</dd>
+                                        <dt class="font-weight-bold">작업자 연락처</dt>
+                                        <dd>{{ work_plan_worker.tel }}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col-sm-6">
+                                    <dl class="mb-0">
+                                        <dt class="font-weight-bold">작업자 주민등록번호</dt>
+                                        <dd>{{ work_plan_worker.registration_number }}</dd>
 
-                                            <dt class="font-weight-bold">작업자 차량번호</dt>
-                                            <dd>{{ work_plan_worker.car_number }}</dd>
-                                        </dl>
-                                    </div>
+                                        <dt class="font-weight-bold">작업자 차량번호</dt>
+                                        <dd>{{ work_plan_worker.car_number }}</dd>
+                                    </dl>
                                 </div>
                             </div>
-                            </template>
-                          
-                            
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-                            <!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                        </template>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                        <!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                    </div>
+                </div>
+                </template>
+            </div>
+        </div>
+    </div>
+    <!-- /modal -->
+    <!-- Modal - 작업완료보고서 -->
+    <div class="modal fade" id="modal-repair-end-report" tabindex="-1" role="dialog" aria-labelledby="modal-plan" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="modal-plan">작업 완료 보고서</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card" style="border-right:unset; border-left:unset; ">
+                        <div class="border-2 rounded p-3">
+                            <dl class="mb-0">
+                                <dt class="font-weight-bold">작업 업체명</dt>
+                                <dd>업체명 입니다.</dd>
+
+                                <dt class="font-weight-bold">연락처</dt>
+                                <dd>010-1234-5678</dd>
+
+                                <dt class="font-weight-bold">업체 주소</dt>
+                                <dd>업체 주소 1<br>업체 주소 상세 1</dd>
+                            </dl>
+                        </div>
+
+                        <div class="border-2 rounded p-3 mt-3">
+                            <dl class="mb-0">
+                                <dt class="font-weight-bold">입찰 공고명</dt>
+                                <dd>공고 타이틀</dd>
+
+                                <dt class="font-weight-bold">입찰 공고내용</dt>
+                                <dd>공고 내용</dd>
+
+                                <dt class="font-weight-bold">작업 완료일</dt>
+                                <dd>2023.03.01</dd>
+
+                                <dt class="font-weight-bold">작업 내용</dt>
+                                <dd>작업 내용입니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="border-2 rounded p-3 mt-3" >
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <dl class="mb-0">
+                                        <dt class="font-weight-bold">작업 전 사진 및 영상</dt>
+                                        <dd>
+                                            <div class="row">
+                                                <div class="col-sm-6 col-lg-3" v-for="media in selectedPlan.repair_request.repair_request_media">
+                                                    <div class="card">
+                                                        <div class="card-img-actions m-1">
+                                                            <img class="card-img img-fluid" :src="'http://49.50.160.206:14000/'+media.media" alt="">
+                                                            <div class="card-img-actions-overlay card-img">
+                                                                <a :href="'http://49.50.160.206:14000/'+media.media" class="btn btn-outline-white border-2 btn-icon rounded-pill" data-popup="lightbox" data-gallery="gallery1">
+                                                                    <i class="icon-plus3"></i>
+                                                                </a>
+
+                                                                <a href="#" class="btn btn-outline-white border-2 btn-icon rounded-pill ml-2">
+                                                                    <i class="icon-link"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="col-sm-12">
+                                    <dl class="mb-0">
+                                        <dt class="font-weight-bold">작업 후 사진 및 영상</dt>
+                                        <dd>
+                                            <div class="row">
+                                                <div class="col-sm-6 col-lg-3" v-for="media in selectedPlan.repair_request.repair_request_media">
+                                                    <div class="card">
+                                                        <div class="card-img-actions m-1">
+                                                            <img class="card-img img-fluid" :src="'http://49.50.160.206:14000/'+media.media" alt="">
+                                                            <div class="card-img-actions-overlay card-img">
+                                                                <a :href="'http://49.50.160.206:14000/'+media.media" class="btn btn-outline-white border-2 btn-icon rounded-pill" data-popup="lightbox" data-gallery="gallery1">
+                                                                    <i class="icon-plus3"></i>
+                                                                </a>
+
+                                                                <a href="#" class="btn btn-outline-white border-2 btn-icon rounded-pill ml-2">
+                                                                    <i class="icon-link"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    </template>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                        <!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                    </div>
                 </div>
             </div>
-            <!-- /modal -->
-</div>
+        </div>
+    </div>
+    <!-- /작업완료보고서 -->
+
+
             
     <script>
         var app = new Vue({

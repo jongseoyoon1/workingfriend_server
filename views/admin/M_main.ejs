@@ -47,188 +47,48 @@
                             </div>
 
                             <ul class="media-list" style="height:800px; overflow-y: scroll;">
-                                <li class="media card-body flex-column flex-sm-row">
+                                <li class="media card-body flex-column flex-sm-row"  v-for="repair in repairs">
                                     <div class="mr-sm-3 mb-2 mb-sm-0">
                                         <a href="#">
                                             <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded" width="44" height="44" alt="">
                                         </a>
                                     </div>
+                                    <!-- 보수 -->
+                                    <template v-if="repair.plan_type == 0">
+                                        <div class="media-body">
+                                            <h6 class="media-title font-weight-bold">
+                                                <a href="#" class="font-weight-bold" data-toggle="modal" data-target="#modal-repair"> {{ repair.title }}</a>
+                                            </h6>
+    
+                                            <ul class="list-inline list-inline-dotted text-muted mb-2">
+                                                <li class="list-inline-item"><a href="#" class="text-muted">{{ repair.brand.name }}</a></li>
+                                                <li class="list-inline-item"> {{ repair.store.name }}</li>
+                                            </ul>
+                                            <p>{{ repair.contents }}</p>
+                                        </div>
+                                    </template>
 
-                                    <div class="media-body">
-                                        <h6 class="media-title font-weight-bold">
-                                            <a href="#" class="font-weight-bold" data-toggle="modal" data-target="#modal-repair">입찰요청서 제목</a>
-                                        </h6>
-
-                                        <ul class="list-inline list-inline-dotted text-muted mb-2">
-                                            <li class="list-inline-item"><a href="#" class="text-muted">브랜드명</a></li>
-                                            <li class="list-inline-item">지점명</li>
-                                        </ul>
-                                        <p>입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.</p>
-                                    </div>
-
-                                    <div class="ml-sm-3 mt-2 mt-sm-0">
-                                        <span class="badge badge-primary">New</span>
-                                    </div>
-                                </li>
-
-                                <li class="media card-body flex-column flex-sm-row">
-                                    <div class="mr-sm-3 mb-2 mb-sm-0">
-                                        <a href="#">
-                                            <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded" width="44" height="44" alt="">
-                                        </a>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <h6 class="media-title font-weight-semibold">
-                                            <a href="#" class="font-weight-bold" data-toggle="modal" data-target="#modal-repair">입찰요청서 제목</a>
-                                        </h6>
-
-                                        <ul class="list-inline list-inline-dotted text-muted mb-2">
-                                            <li class="list-inline-item"><a href="#" class="text-muted">브랜드명</a></li>
-                                            <li class="list-inline-item">지점명</li>
-                                        </ul>
-                                        <p>입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.</p>
-                                    </div>
+                                    <!-- 공사 -->
+                                    <template v-else>
+                                        <div class="media-body">
+                                            <h6 class="media-title font-weight-bold">
+                                                <a href="#" class="font-weight-bold" data-toggle="modal" data-target="#modal-repair"> {{ repair.title }}</a>
+                                            </h6>
+    
+                                            <ul class="list-inline list-inline-dotted text-muted mb-2">
+                                                <li class="list-inline-item"><a href="#" class="text-muted">{{ repair.c_name }}</a></li>
+                                            </ul>
+                                            <p>{{ repair.contents }}</p>
+                                        </div>
+                                    </template>
+                                    
 
                                     <div class="ml-sm-3 mt-2 mt-sm-0">
-                                        <span class="badge badge-primary">New</span>
-                                    </div>
-                                </li>
-
-                                <li class="media card-body flex-column flex-sm-row">
-                                    <div class="mr-sm-3 mb-2 mb-sm-0">
-                                        <a href="#">
-                                            <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded" width="44" height="44" alt="">
-                                        </a>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <h6 class="media-title font-weight-semibold">
-                                            <a href="#" class="font-weight-bold" data-toggle="modal" data-target="#modal-repair">입찰요청서 제목</a>
-                                        </h6>
-
-                                        <ul class="list-inline list-inline-dotted text-muted mb-2">
-                                            <li class="list-inline-item"><a href="#" class="text-muted">브랜드명</a></li>
-                                            <li class="list-inline-item">지점명</li>
-                                        </ul>
-                                        <p>입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.</p>
-                                    </div>
-
-                                    <div class="ml-sm-3 mt-2 mt-sm-0">
-                                        <span class="text-muted">1 일전</span>
-                                    </div>
-                                </li>
-
-                                <li class="media card-body flex-column flex-sm-row">
-                                    <div class="mr-sm-3 mb-2 mb-sm-0">
-                                        <a href="#">
-                                            <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded" width="44" height="44" alt="">
-                                        </a>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <h6 class="media-title font-weight-semibold">
-                                            <a href="#" class="font-weight-bold" data-toggle="modal" data-target="#modal-repair">입찰요청서 제목</a>
-                                        </h6>
-
-                                        <ul class="list-inline list-inline-dotted text-muted mb-2">
-                                            <li class="list-inline-item"><a href="#" class="text-muted">브랜드명</a></li>
-                                            <li class="list-inline-item">지점명</li>
-                                        </ul>
-                                        <p>입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.</p>
-                                    </div>
-
-                                    <div class="ml-sm-3 mt-2 mt-sm-0">
-                                        <span class="text-muted">1 일전</span>
-                                    </div>
-                                </li>
-                                <li class="media card-body flex-column flex-sm-row">
-                                    <div class="mr-sm-3 mb-2 mb-sm-0">
-                                        <a href="#">
-                                            <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded" width="44" height="44" alt="">
-                                        </a>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <h6 class="media-title font-weight-semibold">
-                                            <a href="#" class="font-weight-bold" data-toggle="modal" data-target="#modal-repair">입찰요청서 제목</a>
-                                        </h6>
-
-                                        <ul class="list-inline list-inline-dotted text-muted mb-2">
-                                            <li class="list-inline-item"><a href="#" class="text-muted">브랜드명</a></li>
-                                            <li class="list-inline-item">지점명</li>
-                                        </ul>
-                                        <p>입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.</p>
-                                    </div>
-
-                                    <div class="ml-sm-3 mt-2 mt-sm-0">
-                                        <span class="text-muted">2 일전</span>
-                                    </div>
-                                </li>
-                                <li class="media card-body flex-column flex-sm-row">
-                                    <div class="mr-sm-3 mb-2 mb-sm-0">
-                                        <a href="#">
-                                            <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded" width="44" height="44" alt="">
-                                        </a>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <h6 class="media-title font-weight-semibold">
-                                            <a href="#" class="font-weight-bold" data-toggle="modal" data-target="#modal-repair">입찰요청서 제목</a>
-                                        </h6>
-
-                                        <ul class="list-inline list-inline-dotted text-muted mb-2">
-                                            <li class="list-inline-item"><a href="#" class="text-muted">브랜드명</a></li>
-                                            <li class="list-inline-item">지점명</li>
-                                        </ul>
-                                        <p>입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.</p>
-                                    </div>
-
-                                    <div class="ml-sm-3 mt-2 mt-sm-0">
-                                        <span class="text-muted">2 일전</span>
-                                    </div>
-                                </li>
-                                <li class="media card-body flex-column flex-sm-row">
-                                    <div class="mr-sm-3 mb-2 mb-sm-0">
-                                        <a href="#">
-                                            <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded" width="44" height="44" alt="">
-                                        </a>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <h6 class="media-title font-weight-semibold">
-                                            <a href="#" class="font-weight-bold" data-toggle="modal" data-target="#modal-repair">입찰요청서 제목</a>
-                                        </h6>
-
-                                        <ul class="list-inline list-inline-dotted text-muted mb-2">
-                                            <li class="list-inline-item"><a href="#" class="text-muted">브랜드명</a></li>
-                                            <li class="list-inline-item">지점명</li>
-                                        </ul>
-                                        <p>입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.입찰 공고 내용입니다.</p>
-                                    </div>
-
-                                    <div class="ml-sm-3 mt-2 mt-sm-0">
-                                        <span class="text-muted">2 일전</span>
+                                        <span class="badge badge-primary"> {{ (new Date(repair.created_at)).toLocaleDateString() }}  </span>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <!-- /list layout -->
-
-
-                        <!-- Pagination -->
-<!--                        <div class="d-flex justify-content-center pt-3 mb-3">-->
-<!--                            <ul class="pagination">-->
-<!--                                <li class="page-item disabled"><a href="#" class="page-link"><i class="icon-arrow-left8"></i></a></li>-->
-<!--                                <li class="page-item active"><a href="#" class="page-link">1</a></li>-->
-<!--                                <li class="page-item"><a href="#" class="page-link">2</a></li>-->
-<!--                                <li class="page-item"><a href="#" class="page-link">3</a></li>-->
-<!--                                <li class="page-item"><a href="#" class="page-link">4</a></li>-->
-<!--                                <li class="page-item"><a href="#" class="page-link">5</a></li>-->
-<!--                                <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-right8"></i></a></li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-                        <!-- /pagination -->
 
                     </div>
                     <!-- /task manager table -->
@@ -636,7 +496,6 @@
         curExamMenu: "전체",
         selectedPlan:{},
         repairs:[],
-        constructions:[],
       },
       created() {
         window.Vue = this
@@ -657,10 +516,8 @@
             json:true,
             success: function(result) {
                 if (result) {
-                    window.Vue.repairs = result.filter(plan => plan.plan_type == 0)
-                    window.Vue.constructions = result.filter(plan => plan.plan_type == 1)
-                    console.log("##### repair 3",window.Vue.repairs.length);
-                    console.log("##### constu 4",window.Vue.constructions.length);
+                    window.Vue.repairs = result//.filter(plan => plan.plan_type == 0)
+                    console.log(result)
                     window.Vue.selectedPlan = window.Vue.repairs[0];
                 }
             }

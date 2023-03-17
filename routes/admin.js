@@ -329,6 +329,10 @@ router.get('/user_move', function(req, res, next) {
     res.render('admin/user_move', { title: '' });
 });
 
+router.get('/modal_sample', function(req, res, next) {
+    res.render('admin/modal_sample', { title: '' });
+});
+
 
 
 //
